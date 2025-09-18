@@ -1,8 +1,8 @@
 // What is the truth?
 
 const array = [{ name: "a", count: 100 }, { name: "b", count: 503 }];
-let acc = {};
-for (const item in array) {
+const acc = {};
+for (const item of array) {
   acc[item.name] = (acc[item.name] ?? 0) + item.count;
 }
 
@@ -10,4 +10,4 @@ for (const item in array) {
 array.reduce((acc, item) => ({
   ...acc,
   [item.name]: (acc[item.name] ?? 0) + item.count,
-}));
+}), {});
